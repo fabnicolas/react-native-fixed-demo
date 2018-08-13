@@ -38,6 +38,8 @@ Make sure it's typed correctly: at beginning I typed `react-native` instead of `
 
 *In alternative you can use `react-native` command: `react-native init mainproj`.*
 
+4. **Install packages** by executing `npm install`.
+
 ## Run your project
 1. **CD into**.
 `cd react-native-fixed-demo`
@@ -80,7 +82,7 @@ brew tap caskroom/versions
 brew cask install java8
 ```
 
-### 2. Problems with SDK, output similar to: `Failed to notify project evaluation listener. > Could not initialize class com.android.sdklib.repository.AndroidSdkHandler`.
+### 2. Problems with SDK, output similar to: `SDK location not found`, or `Failed to notify project evaluation listener. > Could not initialize class com.android.sdklib.repository.AndroidSdkHandler`.
 
 **Solution**: This is an Android-related problem and it basically means that the **SDK folder** is NOT correct or specified.
 
