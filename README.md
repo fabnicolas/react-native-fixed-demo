@@ -30,6 +30,7 @@ To sum them:
 `npm install -g react-native-cli`.
 
 Make sure it's typed correctly: at beginning I typed `react-native` instead of `react-native-cli`, which does **NOT** have `react-native` process.
+
 3. **Fork** this project (**Recommended**):
 `git clone https://github.com/fabnicolas/react-native-fixed-demo`
 
