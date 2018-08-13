@@ -25,8 +25,8 @@ To sum them:
 - In **Expo**, you must be connected to internet to use JS assets stored in Google Cloud Platform / AWS.
 
 ## Setup your machine for Native Code
-1. (Install NodeJS)[https://nodejs.org/it/download/].
-2. Install `React Native CLI` globally.
+1. **[Install NodeJS](https://nodejs.org/it/download/)**.
+2. **Install** `React Native CLI` *globally*.
 `npm install -g react-native-cli`.
 
 Make sure it's typed correctly: at beginning I typed `react-native` instead of `react-native-cli`, which does **NOT** have `react-native` process.
