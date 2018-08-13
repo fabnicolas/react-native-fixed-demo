@@ -108,3 +108,10 @@ On Linux, just set the path accordingly to your Android SDK installation folder.
 ...
 ```
 3. **Reinstall packages by executing** `npm install`.
+
+### 4. Problems with react-native, output similar to: `error: bundling failed: "TransformError [...] (While processing preset: node_modules [... \\babel-preset-react-native\\index.js")"`
+
+**Solution**: this repository automatically fixes this problem, however if you did not fork this project but made a `react-native init` installation - you should follow these steps below.
+1. **Delete** `node_modules` folder.
+2. **Execute** `npm install babel-preset-react-native@2.1.0 --save-dev`
+3. **Reinstall packages by executing** `npm install`.
