@@ -5,7 +5,7 @@ I decided to made this repository after following the *'Getting started'* page o
 
 There are some informations that aren't very clear when it comes to error reporting and I have to thank StackOverflow users if I found fixes to run the demo project.
 
-Here is the checklist.
+Let's start.
 
 ## Avoid [Expo](https://expo.io/). Follow "Building Projects with Native Code" instead of using Expo
 This can be a subjective topic; Expo makes life easier for you and many things are implemented and supported out of the box. You literally just download the Expo app, start an Expo project on their website, scan a QR code, use Tunnel or LAN mode and you're ready to make awesome apps.
@@ -49,9 +49,25 @@ Make sure it's typed correctly: at beginning I typed `react-native` instead of `
 
 Make sure your Android device is connected and that `adb devices` shows it.
 
-3. **In theory**, you should be done. **However I have encountered some errors and that's why I made this repository. Here is below a checklist that can help you during installation and use of React Native for the first time.**
+3. **In theory**, you should be done. **If not, check section 'Errors & Fixes' for a detailed checklist to follow to fix your build.**
+
+## How does this build differ from `react-native`?
+1. It fixes error #3 that you can encounter if you use `react-native init` by downgrading and locking `react-native` to version 0.55.4;
+2. It fixes error #4 that you can encounter if you use `react-native init` by installing NPM package `babel-presect-react-native` version 2.1.0;
+3. It updates **gradle** `distributionUrl` to the latest version as of 15 August 2018; in case you need to update it manually, you can change it in `android/gradle/wrapper/gradle-wrapper.properties`:
+```
+distributionUrl=https\://services.gradle.org/distributions/gradle-4.3-rc-2-all.zip
+```
+4. `App.js` now is inside a new folder called `app`. Since in the root folder there are many files regarding `babel`, `git`, `flow`, `package.json and its lock`, `android` and `ios` folders, it is a good practice to separate scripts in a separate folder to keep everything in order. Of course, in `index.js` this got changed:
+```
+import App from './app/App';
+```
 
 ## Errors & Fixes
+Here's most of the errors that you can encounter during installation and use of React Native for the first time. I have personally encountered same issues too and that's why I made this repository as it took me some hours to find out what was the matter about.
+
+Here's the **checklist**:
+
 ### 1. Problems with JVM, output similar to: `Could not determine java version`, or `Failed to notify project evaluation listener. > javax/xml/bind/annotation/XmlSchema`.
 
 **Solution**: *React Native* uses *Gradle* which uses **JDK**. To build React Native files for android, you need **JDK 8**. Other versions such as JDK 9 and JDK 10 are not supported at moment.
@@ -74,7 +90,7 @@ If you want to **keep multiple java versions** in your Windows machine, this is 
 
 - **Reboot** your machine (Yeah... we love Windows).
 
-### Linux, using brew
+#### Linux, using brew
 If you are a Linux user, simply do this:
 ```
 brew cask uninstall java
@@ -97,6 +113,9 @@ sdk.dir=C:\\Users\\YOUR_NICKNAME\\AppData\\Local\\Android\\sdk
 Where `YOUR_NICKNAME` is your **Windows username**. *Too bad we can't just use `%APPDATA%`.*
 
 On Linux, just set the path accordingly to your Android SDK installation folder.
+
+## Errors related to `react-native init` that got fixed with this repository
+This section is useful if you still want to `react-native init` instead of using this repository.
 
 ### 3. Problems with react-native, output similar to: `Unable to resolve module 'AccessibilityInfo'`.
 
