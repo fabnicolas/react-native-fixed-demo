@@ -79,13 +79,10 @@ As simple as it is. This method automatically fixes `PATH` environment variable 
 #### Windows: change PATH variable
 If you want to **keep multiple java versions** in your Windows machine, this is the right solution for you.
 
-- **Change** your `PATH` variable by **removing all Java versions and add**:
+- **Change** your `PATH` variable by **removing all Java versions and add**: `;%JAVA_HOME%\bin`
 
-`;%JAVA_HOME%\bin`
+- **Make** a new environment variable called `JAVA_HOME` and set it to **JDK 8 path**, for example: `C:\Program Files\Java\jdk1.8.0_181`
 
-- **Make** a new environment variable called `JAVA_HOME` and set it to **JDK 8 path**, for example:
-
-`C:\Program Files\Java\jdk1.8.0_181`
 *You can download JDK 8 [here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).*
 
 - **Reboot** your machine (Yeah... we love Windows).
